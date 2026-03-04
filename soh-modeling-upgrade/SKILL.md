@@ -73,3 +73,16 @@ python scripts/train_soh_with_uncertainty.py \
 - `references/soh-paper-notes.md`: practical mapping from recent SOH papers to this skill.
 - `scripts/extract_soh_features.py`: physics-informed feature extractor.
 - `scripts/train_soh_with_uncertainty.py`: uncertainty + drift model trainer.
+
+## Real-world example
+
+Run a practical end-to-end field drill using the new integration skill:
+
+```bash
+python ../soh-field-demo/scripts/run_battery_field_demo.py \
+  --generate-data \
+  --n-cells 8 \
+  --cycles-per-cell 18 \
+  --points-per-cycle 140 \
+  --out-dir ./field-demo
+```
