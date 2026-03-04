@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Battery-Health-Skills Lab</title>
+    <meta
+      name="description"
+      content="A practical platform for battery telemetry, SOH modeling, and deployment safety checks."
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="app.js"></script>
+  </head>
+  <body>
+    <div class="aurora aurora--one"></div>
+    <div class="aurora aurora--two"></div>
+    <div class="page-shell">
+      <header class="hero reveal">
+        <nav class="top-nav">
+          <div class="brand">
+            <span class="brand-badge">BHS</span>
+            <div>
+              <p class="kicker">Battery-Health-Skills Lab</p>
+              <h1>Battery Intelligence & Protection Suite</h1>
+            </div>
+          </div>
+          <div class="nav-links">
+            <a href="#skills">Skills</a>
+            <a href="#demos">Demos</a>
+            <a href="#workflow">Workflow</a>
+            <a href="#references">References</a>
+          </div>
+        </nav>
+
+        <p class="subtitle">
+          A modular set of AI workflows for battery health analytics, from feature extraction to uncertainty-aware SOH modeling,
+          telemetry integrity, and security governance.
+        </p>
+        <div class="hero-actions">
+          <a class="btn primary" href="https://github.com/AndrewDzzz/Battery-Health-Skills" target="_blank" rel="noopener">Open on GitHub</a>
+          <a class="btn" href="#workflow">View Runbook</a>
+        </div>
+      </header>
+
+      <main>
+        <section id="overview" class="panel reveal">
+          <h2>What this project gives you</h2>
+          <p>
+            Use this site as a launch pad for operations teams, researchers, and security reviewers.
+            Every skill is production-oriented and stores scripts, references, and runbooks in one path.
+          </p>
+          <div class="metric-grid">
+            <article class="metric-card">
+              <h3>6 Skills</h3>
+              <p>Mechanism-aware feature extraction, interpretation, integrity checks, security baseline, SOH upgrade, and field demo workflows.</p>
+            </article>
+            <article class="metric-card">
+              <h3>Zero heavy dependencies</h3>
+              <p>Scripts run with lightweight Python stacks and keep outputs as CSV/JSON/Markdown artifacts.</p>
+            </article>
+            <article class="metric-card">
+              <h3>Deployment-aware</h3>
+              <p>Each run produces auditable summaries, thresholds, and risk/uncertainty signals before release.</p>
+            </article>
+          </div>
+        </section>
+
+        <section id="skills" class="panel reveal">
+          <div class="section-head">
+            <h2>Skills</h2>
+            <input id="skill-filter" type="search" placeholder="Filter skills..." aria-label="Filter skills" />
+          </div>
+          <div id="skill-grid" class="skill-grid"></div>
+        </section>
+
+        <section id="demos" class="panel reveal">
+          <h2>Quick Commands</h2>
+          <div class="command-stack">
+            <article class="command-card">
+              <h3>SOH Feature + Uncertainty Demo</h3>
+              <pre><code>python soh-field-demo/scripts/run_battery_field_demo.py \
+  --generate-data \
+  --n-cells 6 \
+  --cycles-per-cell 14 \
+  --points-per-cycle 120 \
+  --out-dir ./runs/ev-fleet-demo</code></pre>
+            </article>
+            <article class="command-card">
+              <h3>Feature extraction</h3>
+              <pre><code>python soh-modeling-upgrade/scripts/extract_soh_features.py \
+  --input telemetry.csv \
+  --output soh_features.csv \
+  --timestamp-col timestamp \
+  --cycle-col cycle_id \
+  --current-col current \
+  --voltage-col voltage \
+  --temp-col temperature \
+  --soc-col soc \
+  --soh-proxy-col capacity</code></pre>
+            </article>
+            <article class="command-card">
+              <h3>Security + Integrity</h3>
+              <pre><code>python battery-telemetry-integrity/scripts/check_telemetry_integrity.py \
+  --input telemetry.csv \
+  --time-col timestamp \
+  --id-col cell_id \
+  --voltage-col voltage \
+  --current-col current \
+  --temp-col temperature \
+  --output-dir runs/telemetry</code></pre>
+            </article>
+          </div>
+        </section>
+
+        <section id="workflow" class="panel reveal">
+          <h2>Standard workflow</h2>
+          <ol class="timeline">
+            <li><span>01</span>Ingest telemetry and run integrity gates.</li>
+            <li><span>02</span>Extract SOH and mechanism-aware features.</li>
+            <li><span>03</span>Train model with uncertainty diagnostics.</li>
+            <li><span>04</span>Run domain shift checks when moving between fleets or cells.</li>
+            <li><span>05</span>Publish risk and rollout artifacts.</li>
+          </ol>
+        </section>
+
+        <section id="references" class="panel reveal">
+          <h2>Reference notes</h2>
+          <div class="reference-grid">
+            <article class="reference-card">
+              <h3>SOH research</h3>
+              <ul>
+                <li>2512.24686 — paper context that inspired mechanism-aware decomposition.</li>
+                <li>arXiv 2502.19586, 2503.23858, 2503.04664, 2503.06353.</li>
+              </ul>
+            </article>
+            <article class="reference-card">
+              <h3>Security and integrity</h3>
+              <ul>
+                <li>Telemetry replay, duplicate, and jump anomaly checks.</li>
+                <li>Threat ranking and owner-aware controls plan.</li>
+                <li>Real-world rollout checklist with hard gates.</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+      </main>
+
+      <footer class="reveal">
+        <p>Built for practical battery AI operations — run locally or wire into CI for controlled deployment.</p>
+      </footer>
+    </div>
+  </body>
+</html>

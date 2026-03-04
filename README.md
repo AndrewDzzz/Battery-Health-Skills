@@ -83,3 +83,9 @@ This creates:
 
 - Scripts are designed to be composable. Use the same telemetry file across multiple skills.
 - Use `soh-field-demo` before running to validate a production-like path with clear failure gates.
+
+## Website
+
+- Open the included static project site: [docs/index.html](./docs/index.html)
+- To publish on GitHub Pages:
+  - enable Pages in repository settings and set source to `main` branch and `/docs` folder.
