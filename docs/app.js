@@ -72,7 +72,7 @@ function renderSkills(filter = "") {
       <h3>${skill.name}</h3>
       <p>${skill.description}</p>
       <p><strong>Command:</strong> <code>${skill.command}</code></p>
-      <div class="tags">${skill.tags.map((tag) => `<button class="tag" data-tag="${tag}">${tag}</button>`).join("")}</div>
+      <div class="tags">${skill.tags.map((tag) => `<button type="button" class="tag" data-tag="${tag}" aria-label="Filter skills by ${tag}">${tag}</button>`).join("")}</div>
       <a href="${skill.path}">Open skill folder</a>
     `;
     skillGrid.appendChild(card);
