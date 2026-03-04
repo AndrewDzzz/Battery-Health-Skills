@@ -51,6 +51,9 @@ const skills = [
 
 const skillGrid = document.getElementById("skill-grid");
 const filterInput = document.getElementById("skill-filter");
+const skillCount = document.getElementById("skill-count");
+const clearFilter = document.getElementById("clear-filter");
+const emptyState = document.getElementById("skills-empty");
 
 function renderSkills(filter = "") {
   const q = filter.trim().toLowerCase();
@@ -69,15 +72,49 @@ function renderSkills(filter = "") {
       <h3>${skill.name}</h3>
       <p>${skill.description}</p>
       <p><strong>Command:</strong> <code>${skill.command}</code></p>
-      <div class="tags">${skill.tags.map((tag) => `<span class="tag">${tag}</span>`).join("")}</div>
+      <div class="tags">${skill.tags.map((tag) => `<button class="tag" data-tag="${tag}">${tag}</button>`).join("")}</div>
       <a href="${skill.path}">Open skill folder</a>
     `;
     skillGrid.appendChild(card);
   });
+
+  skillCount.textContent = `${nodes.length} of ${skills.length} skills`;
+  if (nodes.length === 0) {
+    emptyState.classList.add("active");
+  } else {
+    emptyState.classList.remove("active");
+  }
+
+  skillGrid.querySelectorAll(".tag").forEach((tagButton) => {
+    tagButton.addEventListener("click", () => {
+      const tag = tagButton.dataset.tag;
+      filterInput.value = tag;
+      renderSkills(tag);
+      filterInput.focus();
+    });
+
+    tagButton.addEventListener("keydown", (event) => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        tagButton.click();
+      }
+    });
+  });
+
+  if (nodes.length === 0 && q) {
+    filterInput.setAttribute("aria-invalid", "true");
+  } else {
+    filterInput.removeAttribute("aria-invalid");
+  }
 }
 
 filterInput?.addEventListener("input", (event) => {
   renderSkills(event.target.value);
+});
+
+clearFilter?.addEventListener("click", () => {
+  filterInput.value = "";
+  renderSkills("");
 });
 
 renderSkills();

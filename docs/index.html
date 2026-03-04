@@ -28,6 +28,7 @@
             <a href="#skills">Skills</a>
             <a href="#demos">Demos</a>
             <a href="#workflow">Workflow</a>
+            <a href="#cta">CTA</a>
             <a href="#references">References</a>
           </div>
         </nav>
@@ -68,9 +69,14 @@
         <section id="skills" class="panel reveal">
           <div class="section-head">
             <h2>Skills</h2>
-            <input id="skill-filter" type="search" placeholder="Filter skills..." aria-label="Filter skills" />
+            <div class="section-tools">
+              <span id="skill-count" class="pill" aria-live="polite">6 skills available</span>
+              <button id="clear-filter" type="button" class="btn ghost">Clear</button>
+              <input id="skill-filter" type="search" placeholder="Filter skills..." aria-label="Filter skills" />
+            </div>
           </div>
           <div id="skill-grid" class="skill-grid"></div>
+          <p id="skills-empty" class="empty-state">No skills match your filter.</p>
         </section>
 
         <section id="demos" class="panel reveal">
@@ -78,6 +84,7 @@
           <div class="command-stack">
             <article class="command-card">
               <h3>SOH Feature + Uncertainty Demo</h3>
+              <p class="command-sub">Synthetic fleet-like telemetry → integrity → training + uncertainty</p>
               <pre><code>python soh-field-demo/scripts/run_battery_field_demo.py \
   --generate-data \
   --n-cells 6 \
@@ -87,6 +94,7 @@
             </article>
             <article class="command-card">
               <h3>Feature extraction</h3>
+              <p class="command-sub">Derive interpretable features from cycle telemetry for modeling.</p>
               <pre><code>python soh-modeling-upgrade/scripts/extract_soh_features.py \
   --input telemetry.csv \
   --output soh_features.csv \
@@ -100,6 +108,7 @@
             </article>
             <article class="command-card">
               <h3>Security + Integrity</h3>
+              <p class="command-sub">Run anti-tamper checks before any model score is trusted.</p>
               <pre><code>python battery-telemetry-integrity/scripts/check_telemetry_integrity.py \
   --input telemetry.csv \
   --time-col timestamp \
@@ -123,6 +132,17 @@
           </ol>
         </section>
 
+        <section id="cta" class="panel reveal cta-panel">
+          <h2>Make this your default safety stack</h2>
+          <p>
+            Start with feature and integrity controls, then run SOH modeling with uncertainty and release gates before model serving.
+          </p>
+          <div class="hero-actions">
+            <a class="btn primary" href="https://github.com/AndrewDzzz/Battery-Health-Skills" target="_blank" rel="noopener">Open repository</a>
+            <a class="btn" href="#skills">Inspect skill runbooks</a>
+          </div>
+        </section>
+
         <section id="references" class="panel reveal">
           <h2>Reference notes</h2>
           <div class="reference-grid">
@@ -139,6 +159,13 @@
                 <li>Telemetry replay, duplicate, and jump anomaly checks.</li>
                 <li>Threat ranking and owner-aware controls plan.</li>
                 <li>Real-world rollout checklist with hard gates.</li>
+              </ul>
+            </article>
+            <article class="reference-card">
+              <h3>UI system used</h3>
+              <ul>
+                <li><a href="https://github.com/AndrewDzzz/Battery-Health-Skills/blob/main/ui-ux-pro-max-skill/references/design-system-recommendation.md">Download generated design recommendations</a></li>
+                <li><a href="https://github.com/nextlevelbuilder/ui-ux-pro-max-skill">Source UI/UX Pro Max repository</a></li>
               </ul>
             </article>
           </div>

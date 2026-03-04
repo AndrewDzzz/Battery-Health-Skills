@@ -16,6 +16,8 @@ Operational AI skill pack for battery telemetry, SOH modeling, and deployment-gr
   - Degradation-oriented SOH feature extraction, uncertainty-aware regression, and drift checks.
 - `soh-field-demo`
   - End-to-end real-world workflow: simulate or ingest telemetry, validate integrity, estimate SOH, and publish a rollout report.
+- `ui-ux-pro-max-skill`
+  - UI/UX design intelligence reference used to guide the website styling and interaction patterns in `docs/`.
 
 ## Quick start
 
@@ -89,3 +91,4 @@ This creates:
 - Open the included static project site: [docs/index.html](./docs/index.html)
 - To publish on GitHub Pages:
   - enable Pages in repository settings and set source to `main` branch and `/docs` folder.
+- UI/UX design direction came from `ui-ux-pro-max-skill/references/design-system-recommendation.md`.
