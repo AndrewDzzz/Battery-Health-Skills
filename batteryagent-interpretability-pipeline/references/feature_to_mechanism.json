@@ -1,0 +1,12 @@
+{
+  "cycle_number": "Usage history trend",
+  "cc_phase_ratio": "Usage history / stress phase",
+  "soc_max": "Usage history boundary usage",
+  "pack_cell_voltage_ratio": "Voltage consistency and balancing",
+  "voltage_correlation": "Voltage coupling and sensor integrity",
+  "initial_min_voltage": "Initial electrical transient behavior",
+  "voltage_gradient": "Dynamic voltage response",
+  "max_temp_diff": "Thermal imbalance",
+  "max_temp_rate": "Thermal transient stress",
+  "terminal_temp": "Thermal end-state condition"
+}
