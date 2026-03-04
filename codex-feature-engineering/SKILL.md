@@ -1,5 +1,5 @@
 ---
-name: batteryagent-feature-engineering
+name: codex-feature-engineering
 description: Extract mechanism-aware lithium-ion battery features for interpretable fault diagnosis, following the BatteryAgent physical perception layer design (usage-history, voltage, and thermodynamic features).
 ---
 
@@ -62,4 +62,3 @@ Expected outputs:
 
 - `references/paper-extraction-notes.md`: notes from the paper on feature intent and module boundaries
 - `scripts/extract_features.py`: end-to-end extractor and validation helper
-

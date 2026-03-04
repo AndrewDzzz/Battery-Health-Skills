@@ -1,5 +1,5 @@
 ---
-name: batteryagent-interpretability-pipeline
+name: codex-interpretability-pipeline
 description: Train interpretable battery fault classifiers with GBDT, compute SHAP attributions, and turn top feature contributions into structured LLM-ready diagnostics.
 ---
 
@@ -46,4 +46,3 @@ python scripts/compose_diagnosis_prompt.py \
 - `references/gbdt_shap_prompting.md`: expected modeling + prompting structure
 - `scripts/train_gbdt_shap.py`: training and explainability pipeline
 - `scripts/compose_diagnosis_prompt.py`: SHAP-to-prompt compiler for LLMs
-
