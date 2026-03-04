@@ -1,5 +1,5 @@
 ---
-name: codex-feature-engineering
+name: feature-engineering
 description: Extract mechanism-aware lithium-ion battery features for interpretable fault diagnosis, following the BatteryAgent physical perception layer design (usage-history, voltage, and thermodynamic features).
 ---
 

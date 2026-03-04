@@ -1,5 +1,5 @@
 ---
-name: codex-interpretability-pipeline
+name: interpretability-pipeline
 description: Train interpretable battery fault classifiers with GBDT, compute SHAP attributions, and turn top feature contributions into structured LLM-ready diagnostics.
 ---
 
